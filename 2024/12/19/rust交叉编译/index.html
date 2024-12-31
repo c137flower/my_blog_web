@@ -20,15 +20,15 @@
   <title>rust交叉编译pingap - c137flower</title>
 
   
-    <meta name="description" content="pingap介绍Pingap是类似于nginx的反向代理，基于pingora构建 交叉编译要交叉编译到的平台架构为debian armv7l(armhf)运行交叉编译的平台archlinux x64  克隆源代码1git clone https:&#x2F;&#x2F;github.com&#x2F;vicanso&#x2F;pingap.git 安装rust target123456# 查看rusth支持的targetrustup t">
+    <meta name="description" content="pingap介绍Pingap是类似于nginx的反向代理，基于pingora构建 交叉编译要交叉编译到的平台架构为debian armv7l(armhf)运行交叉编译的平台archlinux x64 1. 克隆源代码1git clone https:&#x2F;&#x2F;github.com&#x2F;vicanso&#x2F;pingap.git 2. 安装rust target123456# 查看rusth支持的targetrus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rust交叉编译pingap">
 <meta property="og:url" content="http://137789.xyz/2024/12/19/rust%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/index.html">
 <meta property="og:site_name" content="c137flower">
-<meta property="og:description" content="pingap介绍Pingap是类似于nginx的反向代理，基于pingora构建 交叉编译要交叉编译到的平台架构为debian armv7l(armhf)运行交叉编译的平台archlinux x64  克隆源代码1git clone https:&#x2F;&#x2F;github.com&#x2F;vicanso&#x2F;pingap.git 安装rust target123456# 查看rusth支持的targetrustup t">
+<meta property="og:description" content="pingap介绍Pingap是类似于nginx的反向代理，基于pingora构建 交叉编译要交叉编译到的平台架构为debian armv7l(armhf)运行交叉编译的平台archlinux x64 1. 克隆源代码1git clone https:&#x2F;&#x2F;github.com&#x2F;vicanso&#x2F;pingap.git 2. 安装rust target123456# 查看rusth支持的targetrus">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-19T14:35:45.000Z">
-<meta property="article:modified_time" content="2024-12-19T15:12:22.300Z">
+<meta property="article:modified_time" content="2024-12-31T06:44:24.953Z">
 <meta property="article:author" content="c137flower">
 <meta property="article:tag" content="编程">
 <meta name="twitter:card" content="summary">
@@ -77,7 +77,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-19T14:35:45.000Z">2024-12-19</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-19T15:12:22.300Z">2024-12-19</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-19T14:35:45.000Z">2024-12-19</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-31T06:44:24.953Z">2024-12-31</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -88,18 +88,27 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><h2 id="pingap介绍"><a href="#pingap介绍" class="headerlink" title="pingap介绍"></a>pingap介绍</h2><p>Pingap是类似于nginx的反向代理，基于<a target="_blank" rel="noopener" href="https://https//github.com/cloudflare/pingora">pingora</a>构建</p>
-<h2 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h2><p>要交叉编译到的平台架构为<code>debian armv7l(armhf)</code><br>运行交叉编译的平台<code>archlinux x64</code></p>
-<ol>
-<li>克隆源代码<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/vicanso/pingap.git</span><br></pre></td></tr></table></figure></li>
-<li>安装rust target<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看rusth支持的target</span></span><br><span class="line">rustup target list </span><br><span class="line"><span class="comment"># 选择armv7-unknown-linux-gnueabihf</span></span><br><span class="line">rustup target add armv7-unknown-linux-gnueabihf</span><br><span class="line"><span class="comment"># 查看是否安装成功，安装成功后对应架构会出现armv7-unknown-linux-gnueabihf (installed)</span></span><br><span class="line">rustup target list</span><br></pre></td></tr></table></figure></li>
-<li>安装gcc target<br>选择的gcc target为<code>armv7l-linux-gnueabihf</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从archlinuxcn源安装</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S armv7l-linux-gnueabihf-gcc</span><br></pre></td></tr></table></figure></li>
-<li>编译rust项目</li>
-</ol>
+  </div><article class="md-text content"><h3 id="pingap介绍"><a href="#pingap介绍" class="headerlink" title="pingap介绍"></a>pingap介绍</h3><p><a target="_blank" rel="noopener" href="https://github.com/vicanso/pingap">Pingap</a>是类似于nginx的反向代理，基于<a target="_blank" rel="noopener" href="https://https//github.com/cloudflare/pingora">pingora</a>构建</p>
+<h3 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h3><p>要交叉编译到的平台架构为<code>debian armv7l(armhf)</code><br>运行交叉编译的平台<code>archlinux x64</code></p>
+<h4 id="1-克隆源代码"><a href="#1-克隆源代码" class="headerlink" title="1. 克隆源代码"></a>1. 克隆源代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/vicanso/pingap.git</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装rust-target"><a href="#2-安装rust-target" class="headerlink" title="2. 安装rust target"></a>2. 安装rust target</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看rusth支持的target</span></span><br><span class="line">rustup target list </span><br><span class="line"><span class="comment"># 选择armv7-unknown-linux-gnueabihf</span></span><br><span class="line">rustup target add armv7-unknown-linux-gnueabihf</span><br><span class="line"><span class="comment"># 查看是否安装成功，安装成功后对应架构会出现armv7-unknown-linux-gnueabihf (installed)</span></span><br><span class="line">rustup target list</span><br></pre></td></tr></table></figure>
+<h4 id="3-安装c-c-交叉编译器gcc或zig-二选一"><a href="#3-安装c-c-交叉编译器gcc或zig-二选一" class="headerlink" title="3. 安装c&#x2F;c++交叉编译器gcc或zig (二选一)"></a>3. 安装c&#x2F;c++交叉编译器gcc或zig (二选一)</h4><p>如果rust项目中存在需要编译的c&#x2F;c++依赖就要安装对应平台的编译器, 编译pingap需要安装</p>
 <ul>
-<li>直接在项目中运行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo build --release --target=armv7-unknown-linux-gnueabihf --config target.armv7-unknown-linux-gnueabihf.linker=\&quot;armv7l-linux-gnueabihf-gcc\&quot;`</span><br></pre></td></tr></table></figure></li>
-<li>或设置项目配置文件<br>在项目根目录的<code>.cargo/config.toml</code>添加<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[target.armv7-unknown-linux-gnueabihf]</span></span><br><span class="line"><span class="attr">linker</span> = <span class="string">&quot;armv7l-linux-gnueabihf-gcc&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>gcc 安装<br>选择的gcc target为<code>armv7l-linux-gnueabihf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从archlinuxcn源安装</span></span><br><span class="line"><span class="built_in">sudo</span> pacman -S armv7l-linux-gnueabihf-gcc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>zig 安装<br>使用<a target="_blank" rel="noopener" href="https://github.com/rust-cross/cargo-zigbuild">cargo-zigbuild</a>,免去查找下载c&#x2F;c++交叉编译器的繁琐</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S zig cargo-zigbuild</span><br><span class="line"><span class="comment"># cargo-zigbuild可以在cargo中安装</span></span><br><span class="line"><span class="comment"># cargo install cargo-zigbuild</span></span><br></pre></td></tr></table></figure></li>
 </ul>
+<h4 id="4-编译rust项目"><a href="#4-编译rust项目" class="headerlink" title="4. 编译rust项目"></a>4. 编译rust项目</h4><h5 id="使用gcc"><a href="#使用gcc" class="headerlink" title="使用gcc"></a>使用gcc</h5><ul>
+<li>直接在项目中运行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo build --release --target=armv7-unknown-linux-gnueabihf --config target.armv7-unknown-linux-gnueabihf.linker=\&quot;armv7l-linux-gnueabihf-gcc\&quot;`</span><br></pre></td></tr></table></figure></li>
+<li>或设置项目配置文件<br>在项目根目录的<code>.cargo/config.toml</code>添加<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[target.armv7-unknown-linux-gnueabihf]</span></span><br><span class="line"><span class="attr">linker</span> = <span class="string">&quot;armv7l-linux-gnueabihf-gcc&quot;</span></span><br></pre></td></tr></table></figure>
+然后运行 <code>cargo build --release --target=armv7-unknown-linux-gnueabihf</code><blockquote>
+<p>标题中的为rust target, linker 中为c&#x2F;c++ 的target</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="使用zig"><a href="#使用zig" class="headerlink" title="使用zig"></a>使用zig</h5><p>直接在项目中运行 <code>cargo zigbuild --target armv7-unknown-linux-gnueabihf</code></p>
 
 <div class="article-footer fs14">
     <section id="license">
@@ -123,7 +132,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#pingap%E4%BB%8B%E7%BB%8D"><span class="toc-text">pingap介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91"><span class="toc-text">交叉编译</span></a></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#pingap%E4%BB%8B%E7%BB%8D"><span class="toc-text">pingap介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91"><span class="toc-text">交叉编译</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%85%8B%E9%9A%86%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="toc-text">1. 克隆源代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85rust-target"><span class="toc-text">2. 安装rust target</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85c-c-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8gcc%E6%88%96zig-%E4%BA%8C%E9%80%89%E4%B8%80"><span class="toc-text">3. 安装c&#x2F;c++交叉编译器gcc或zig (二选一)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%BC%96%E8%AF%91rust%E9%A1%B9%E7%9B%AE"><span class="toc-text">4. 编译rust项目</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gcc"><span class="toc-text">使用gcc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8zig"><span class="toc-text">使用zig</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel blur'>
